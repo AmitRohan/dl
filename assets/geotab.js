@@ -1,7 +1,7 @@
 /**
 * @returns {{initialize: Function, focus: Function, blur: Function}}
 */
-geotab.addin.kruzr360 = () => {
+geotab.addin.driverList = () => {
   'use strict';
 
   /* Scope variables */
