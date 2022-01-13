@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="cache-control" content="no-cache"> 
+  <meta http-equiv="expires" content="0"> 
+  <meta http-equiv="pragma" content="no-cache">
+  <title>KruzrGeotabIntegration</title>
+  <base href="https://amitrohan.github.io/kruzr-geotab-integration/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- This will grab the most up to date version of the api wrapper -->
+  <script src="assets/geotab.js"></script>
+  <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css"/>
+  <link rel="stylesheet" href="assets/plugins/morrisjs/morris.min.css"/>
+  <link rel="stylesheet" href="assets/plugins/nouislider/nouislider.min.css"/> <!-- noUISlider css -->
+
+  <!-- Custom Css -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/color_skins.css">
+  <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css?dp-version=1533195059"/>
+  <link rel="stylesheet" href="assets/css/kruzr_here_maps.css">
+  <link rel="stylesheet" href="assets/css/kruzr_table.css">
+  <link rel="stylesheet" href="assets/css/kruzr_tabs.css">
+  <link rel="stylesheet" href="assets/css/kruzr_input_select.css">
+  <!-- <link rel="stylesheet" href="assets/css/kruzr_input_multi_select.css"> -->
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    .whitescreen {
+      display: none; /* do not display on start */
+      z-index: -1000; /* move behind app-root */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      max-width: 100%;
+      -webkit-box-shadow: 0px 0px 20px 0px #ccc;
+      -moz-box-shadow: 0px 0px 20px 0px #ccc;
+      box-shadow: 0px 0px 20px 0px #ccc;
+      font-size: 14px;
+    }
+    .whitescreen p {
+      margin: 0;
+    }
+    .whitescreen-top {
+      background: #1976d2;
+      color: #fff;
+      padding: 20px;
+    }
+    .whitescreen-icon {
+      font-size: 30px;
+      padding-bottom: 20px;
+    }
+    .whitescreen-message {
+      line-height: 20px;
+    }
+    .whitescreen-email {
+      padding-top: 20px;
+    }
+    .whitescreen-bottom {
+      padding: 20px;
+    }
+    .whitescreen-bottom p {
+      font-size: 10px;
+      background: #fff;
+      color: #000;
+    }
+  </style>
+<link rel="stylesheet" href="styles.a66d2cc08bacb253e68b.css"></head>
+<body>
+  <app-root></app-root>
+  <!-- Jquery Core Js -->
+  <script src="assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) -->
+  <script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- slimscroll, waves Scripts Plugin Js -->
+
+  <script src="assets/bundles/morrisscripts.bundle.js"></script><!-- Morris Plugin Js -->
+  <!--<script src="assets/bundles/jvectormap.bundle.js"></script>--> <!-- JVectorMap Plugin Js -->
+  <script src="assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
+  <script src="assets/bundles/knob.bundle.js"></script> <!-- Jquery Knob-->
+  <!-- Page calendar -->
+  <script src="assets/bundles/fullcalendarscripts.bundle.js"></script>
+  <!-- Page inbox -->
+  <script src="assets/bundles/footable.bundle.js"></script>
+  <!-- Page rtl -->
+  <script src="assets/plugins/chartjs/Chart.bundle.min.js"></script> <!-- Chart Plugins Js -->
+  <!-- Page compose email -->
+  <script src="assets/plugins/ckeditor/ckeditor.js"></script> <!-- Ckeditor -->
+  <!-- Page dialoug -->
+  <script src="assets/plugins/sweetalert/sweetalert.min.js"></script>
+  <!-- Page notification -->
+  <script src="assets/plugins/bootstrap-notify/bootstrap-notify.js"></script>
+  <!-- Page Range sliders -->
+  <script src="assets/plugins/ion-rangeslider/js/ion.rangeSlider.js"></script> <!-- RangeSlider Plugin Js -->
+  <script src="assets/plugins/nestable/jquery.nestable.js"></script>
+  <!-- Page basic form elements -->
+  <script src="assets/plugins/momentjs/moment.js"></script>
+  <script src="assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+  <!-- Page Advance form elements -->
+  <script src="assets/plugins/select2/select2.js"></script> <!-- Select 2 Js -->
+  <script src="assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script> <!-- Bootstrap Colorpicker Js -->
+  <script src="assets/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script> <!-- Input Mask Plugin Js -->
+  <script src="assets/plugins/multi-select/js/jquery.multi-select.js"></script> <!-- Multi Select Plugin Js -->
+  <script src="assets/plugins/jquery-spinner/js/jquery.spinner.js"></script> <!-- Jquery Spinner Plugin Js -->
+  <script src="assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script> <!-- Bootstrap Tags Input Plugin Js -->
+  <script src="assets/plugins/nouislider/nouislider.min.js"></script> <!-- noUISlider Plugin Js -->
+  <!-- Page Advance form validation -->
+  <script src="assets/plugins/jquery-validation/jquery.validate.js"></script> <!-- Jquery Validation Plugin Css -->
+  <script src="assets/plugins/jquery-steps/jquery.steps.js"></script> <!-- JQuery Steps Plugin Js -->
+
+  <!-- Page Jquery DataTable -->
+  <script src="assets/bundles/datatablescripts.bundle.js"></script>
+  <script src="assets/plugins/jquery-datatable/plugins/datetime-moment.js"></script>
+  <script src="assets/plugins/jquery-datatable/buttons/dataTables.buttons.min.js"></script>
+  <script src="assets/plugins/jquery-datatable/buttons/buttons.bootstrap4.min.js"></script>
+  <script src="assets/plugins/jquery-datatable/buttons/buttons.colVis.min.js"></script>
+  <script src="assets/plugins/jquery-datatable/buttons/buttons.html5.min.js"></script>
+  <script src="assets/plugins/jquery-datatable/buttons/buttons.print.min.js"></script>
+
+  <!-- Page editable table -->
+  <script src="assets/plugins/editable-table/mindmup-editabletable.js"></script> <!-- Editable Table Plugin Js -->
+  <!-- Page footable -->
+  <script src="assets/bundles/footable.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
+  <!-- Page flot chart -->
+  <script src="assets/bundles/flotchartsscripts.bundle.js"></script> <!-- flot charts Plugin Js -->
+  <!-- Page chartjs -->
+  <script src="assets/plugins/chartjs/Chart.bundle.js"></script> <!-- Chart Plugins Js -->
+  <script src="assets/plugins/chartjs/polar_area_chart.js"></script><!-- Polar Area Chart Js -->
+
+  <!-- Page jvector map -->
+  <script src="assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+  <script src="assets/plugins/jvectormap/jquery-jvectormap-in-mill.js"></script><!-- India Map Js -->
+  <script src="assets/plugins/jvectormap/jquery-jvectormap-us-aea-en.js"></script><!-- USA Map Js -->
+  <script src="assets/plugins/jvectormap/jquery-jvectormap-uk-mill-en.js"></script><!-- UK Map Js -->
+  <script src="assets/plugins/jvectormap/jquery-jvectormap-au-mill.js"></script><!-- Australia Map Js -->
+
+  <!--<script src="assets/bundles/mainscripts.bundle.js"></script>-->
+  <script src="assets/js/admin.js"></script>
+  <!-- No javascript message -->
+  <noscript>Javascript must be enabled to continue</noscript>
+
+  <!-- White screen error message -->
+  <div id="whitescreen" class="whitescreen">
+    <div class="whitescreen-top">
+      <p class="whitescreen-icon">:-(</p>
+      <p class="whitescreen-message">
+        It looks like the application is not working properly on this device.
+        Please send us a screenshot of this message, so that we can help you:
+      </p>
+      <p class="whitescreen-email">amit@kruzr.co</p>
+    </div>
+    <div class="whitescreen-bottom">
+      <p id="whitescreen-stack"></p>
+    </div>
+  </div>
+
+  <!-- White screen error handling -->
+  <script>
+    var WHITESCREEN_EMPTY_APP_ROOT_DELAY = 8000;
+    var WHITESCREEN_ERROR_DELAY = 5000;
+
+    // Show white screen error
+    var showWhiteScreenError = (error) => {
+      console.error(error);
+      var whitescreen = document.getElementById("whitescreen");
+      if (whitescreen.style.display !== "block") {
+        document.getElementById("whitescreen-stack").innerHTML = error.stack.replace(/\n/g, '<br/>');
+        whitescreen.style.display = "block";
+        document.body.style.display = "block"; // only for ionic
+      }
+    }
+
+    // Handle global errors
+    window.addEventListener("error", function (event) {
+      setTimeout(() => {
+        showWhiteScreenError(event.error);
+      }, WHITESCREEN_ERROR_DELAY);
+    });
+
+    // Detect empty app-root
+    setTimeout(function () {
+      if (!document.getElementsByTagName("app-root")[0].children.length) {
+        showWhiteScreenError(new Error("Empty app-root"));
+      }
+    }, WHITESCREEN_EMPTY_APP_ROOT_DELAY);
+  </script>
+<script src="runtime.0e49e2b53282f40c8925.js" defer></script><script src="polyfills.8c151b8375e767ff858f.js" defer></script><script src="main.191708d2398121c8d600.js" defer></script></body>
+</html>

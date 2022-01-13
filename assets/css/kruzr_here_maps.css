@@ -1,0 +1,51 @@
+
+/* HERE MAPS */
+
+/** Style for the info bubble content */
+.H_ib_body {
+    min-width: 220px;
+    background: #ffffff;
+    color: #696969;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 15px;
+    padding: 12px 12px 16px 12px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.12);
+    border-radius: 8px;
+
+  }
+/** Style for the info bubble tail */
+.H_ib_top {
+    border-color: transparent;
+    fill: white;
+    background-color: white;
+}
+
+.H_ib_tail {
+    display: none;
+}
+
+.H_ib {
+    background-color: white;
+    fill: white;
+    border-color: white transparent;
+}
+
+.H_ib_close {
+    display: none;
+}
+
+.gm-ui-hover-effect {
+    display: none!important;
+}
+
+.gm-style-iw-c {
+    padding: 12px 0px 2px 12px!important;
+    background: #ffffff;
+    color: #696969;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 15px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.12);
+    border-radius: 8px;
+}

@@ -1,0 +1,86 @@
+
+.clickableTable > tbody{
+    cursor: pointer;
+}
+
+div.dataTables_paginate {float: right}
+
+.dataTables_info {
+    padding-left: 14px!important; 
+    color: #424242;
+    font-family: Roboto;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 16px;
+}
+
+
+table.dataTable {
+    margin-top: 0px !important;
+    margin-bottom: 10px !important;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #F2F2F2;
+}
+
+.table th , .table td{
+    border: none
+}
+
+.table {
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Reports Table */
+
+.allReportsAction{
+    cursor: pointer;
+    margin-right: 4px;
+    font-size: 16px;
+    line-height: 16px;
+}
+.allReportsActionAlt{
+    margin-left: 32px;
+}
+
+.allReportsActionDownload{
+    color: #02A1DF;
+}
+.allReportsActionEdit{
+    color: #02A1DF;
+}
+.allReportsActionDel{
+    color: #D0021B;
+}
+
+/* Configuration Table */
+
+.configureOption {
+    cursor: pointer;
+    margin-right: 4px !important;
+    font-size: 16px !important;
+    line-height: 16px !important;
+}
+
+.configureOptionApprove {
+    color : #4AC6B6;
+}
+
+.configureOptionDisabled {
+    color : #A0A0A0 !important;
+}
+
+.configureOptionReject {
+    color : #FC485E;
+}
+
+.tableAction {
+    cursor: pointer !important;
+}
+
+.table-text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80px;
+}
