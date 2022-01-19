@@ -12,7 +12,7 @@ geotab.addin.driverList = () => {
    * Initialize the add-in
    */
   let initialize = () => {
-      this.title = "Code Base Initialized"
+      this.title = "driverList Initialized"
       console.log(this.title);
   };
 
@@ -21,7 +21,7 @@ geotab.addin.driverList = () => {
   * App Logic
   */
   let render = () => {
-        this.title ="Code Base Rendered";
+        this.title ="driverList Rendered";
         console.log(this.title);
         // api.call('Get', {
         //     typeName: 'User'
@@ -37,7 +37,7 @@ geotab.addin.driverList = () => {
                 console.log("Session ",result.sessionId);
                 console.log("Session ",result.userName);
                 console.log("Session ",result.database);
-                window.myGeoKruzrNgAppRef.zone.run(() => { window.myGeoKruzrNgAppRef.loadGeoTabSDKData(result.database,result.sessionId,result.database); });  
+                window.myDriverListNgAppRef.zone.run(() => { window.myDriverListNgAppRef.loadGeoTabSDKData(result.database,result.sessionId,result.database); });  
             }); 
         };
          
@@ -48,7 +48,7 @@ geotab.addin.driverList = () => {
    * Aborts
    */
   let abort = () => {
-      this.title ="Code Base Aborted";
+      this.title ="driverList Aborted";
       console.log(this.title);
   };
 
@@ -76,7 +76,6 @@ geotab.addin.driverList = () => {
       * been modified since it was first initialized.
       */
       focus(freshApi, freshState) {
-          console.log("Back In AddIn");
           api = freshApi;
           state = freshState;
 
@@ -88,7 +87,6 @@ geotab.addin.driverList = () => {
       * Use this function to save state or commit changes to a datastore or release memory.
       */
       blur() {
-          console.log("Left AddIn");
           abort();
       }
   };
