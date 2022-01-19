@@ -49,7 +49,7 @@ geotab.addin.driverList = () => {
     * Clears Angular Init check interval
     */
     let clearAngularAppinitCheck = () => {
-        clearInterval(this.angularAppInitCheckInterval);
+        clearInterval(angularAppInitCheckInterval);
     };
 
     let onAppStart = () => {        
