@@ -7,22 +7,23 @@ geotab.addin.driverList = () => {
   /* Scope variables */
   let api; // Ref https://github.com/Geotab/mg-api-js
   let state;
+  let angularAppInitCheckInterval;
 
   /**
    * Initialize the add-in
    */
-  let initialize = () => {
-      this.title = "driverList Initialized"
-      console.log(this.title);
+  let onAppStart = () => {
+      title = "driverList Initialized"
+      console.log(title);
   };
 
   /**
   * Render
   * App Logic
   */
-  let render = () => {
-        this.title ="driverList Rendered";
-        console.log(this.title);
+  let onAppLoad = () => {
+        title ="driverList Rendered";
+        console.log(title);
         // api.call('Get', {
         //     typeName: 'User'
         // }, function (result) {
@@ -32,32 +33,42 @@ geotab.addin.driverList = () => {
         // }, function (err) {
         //     console.error("USERS ERR ",err);
         // });
-        const startApplication = () => {        
-            api.getSession(function (result) {
-                console.log("Session ",result.sessionId);
-                console.log("Session ",result.userName);
-                console.log("Session ",result.database);
-                var intervalId = setInterval(() => {
-                    if(window.myDriverListNgAppRef && window.myDriverListNgAppRef.zone){
-                        window.myDriverListNgAppRef.zone.run(() => { window.myDriverListNgAppRef.loadGeoTabSDKData(result.database,result.sessionId,result.database); });
-                        clearInterval(intervalId);
-                    }else{
-                        console.log("driverList app not ready yet, checking again");
-                    }
-                },500)
-            }); 
-        };
-         
         startApplication();
   }
 
-  /**
-   * Aborts
-   */
-  let abort = () => {
-      this.title ="driverList Aborted";
-      console.log(this.title);
-  };
+    /**
+     * Aborts
+     */
+    let onAppClose = () => {
+        title ="driverList Aborted";
+        console.log(title);
+        clearAngularAppinitCheck();
+    };
+
+    /**
+    * Clears Angular Init check interval
+    */
+    let clearAngularAppinitCheck = () => {
+        clearInterval(this.angularAppInitCheckInterval);
+    };
+
+    let onAppStart = () => {        
+        api.getSession((result) => {
+            console.log("Session ",result.sessionId);
+            console.log("Session ",result.userName);
+            console.log("Session ",result.database);
+            angularAppInitCheckInterval = setInterval(() => {
+                if(window.myDriverListNgAppRef && window.myDriverListNgAppRef.zone){
+                    window.myDriverListNgAppRef.zone.run(() => { window.myDriverListNgAppRef.loadGeoTabSDKData(result.database,result.sessionId,result.database); });
+                    this.clearAngularAppinitCheck();
+                }else{
+                    console.log("driverList app not ready yet, checking again");
+                }
+            },500)
+        }); 
+    };
+
+
 
   return {
       /*
@@ -70,7 +81,7 @@ geotab.addin.driverList = () => {
           api = freshApi;
           state = freshState;
 
-          initialize();
+          onAppStart();
           if (callback) {
               callback();
           }
@@ -86,7 +97,7 @@ geotab.addin.driverList = () => {
           api = freshApi;
           state = freshState;
 
-          render();
+          onAppLoad();
       },
 
       /*
@@ -94,7 +105,7 @@ geotab.addin.driverList = () => {
       * Use this function to save state or commit changes to a datastore or release memory.
       */
       blur() {
-          abort();
+          onAppClose();
       }
   };
 };
