@@ -42,7 +42,7 @@ geotab.addin.driverList = () => {
   */
   let render = () => {
         console.log("driverList Rendered");
-        this.onAppStart();
+        onAppStart();
   }
 
   /**
@@ -50,7 +50,7 @@ geotab.addin.driverList = () => {
    */
   let abort = () => {
       console.log("driverList Aborted");
-      this.clearAngularAppinitCheck();
+      clearAngularAppinitCheck();
   };
 
   return {
