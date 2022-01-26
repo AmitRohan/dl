@@ -1,0 +1,40 @@
+.k_whitescreen {
+  display: none; /* do not display on start */
+  z-index: -1000; /* move behind app-root */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  max-width: 100%;
+  -webkit-box-shadow: 0px 0px 20px 0px #ccc;
+  -moz-box-shadow: 0px 0px 20px 0px #ccc;
+  box-shadow: 0px 0px 20px 0px #ccc;
+  font-size: 14px;
+}
+.k_whitescreen p {
+  margin: 0;
+}
+.k_whitescreen-top {
+  background: #1976d2;
+  color: #fff;
+  padding: 20px;
+}
+.k_whitescreen-icon {
+  font-size: 30px;
+  padding-bottom: 20px;
+}
+.k_whitescreen-message {
+  line-height: 20px;
+}
+.k_whitescreen-email {
+  padding-top: 20px;
+}
+.k_whitescreen-bottom {
+  padding: 20px;
+}
+.k_whitescreen-bottom p {
+  font-size: 10px;
+  background: #fff;
+  color: #000;
+}

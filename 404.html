@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="cache-control" content="no-cache"> 
-  <meta http-equiv="expires" content="0"> 
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
   <meta http-equiv="pragma" content="no-cache">
   <title>KruzrGeotabIntegration</title>
   <base href="https://amitrohan.github.io/dl/">
@@ -18,7 +18,7 @@
   <!-- Custom Css -->
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/color_skins.css">
-  <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css?dp-version=1533195059"/>
+  <link rel="stylesheet" type="text/css" href="assets/plugins/heremaps/ui.css"/>
   <link rel="stylesheet" href="assets/css/kruzr_here_maps.css">
   <link rel="stylesheet" href="assets/css/kruzr_table.css">
   <link rel="stylesheet" href="assets/css/kruzr_tabs.css">
@@ -26,51 +26,16 @@
   <!-- <link rel="stylesheet" href="assets/css/kruzr_input_multi_select.css"> -->
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <style>
-    .whitescreen {
-      display: none; /* do not display on start */
-      z-index: -1000; /* move behind app-root */
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 400px;
-      max-width: 100%;
-      -webkit-box-shadow: 0px 0px 20px 0px #ccc;
-      -moz-box-shadow: 0px 0px 20px 0px #ccc;
-      box-shadow: 0px 0px 20px 0px #ccc;
-      font-size: 14px;
-    }
-    .whitescreen p {
-      margin: 0;
-    }
-    .whitescreen-top {
-      background: #1976d2;
-      color: #fff;
-      padding: 20px;
-    }
-    .whitescreen-icon {
-      font-size: 30px;
-      padding-bottom: 20px;
-    }
-    .whitescreen-message {
-      line-height: 20px;
-    }
-    .whitescreen-email {
-      padding-top: 20px;
-    }
-    .whitescreen-bottom {
-      padding: 20px;
-    }
-    .whitescreen-bottom p {
-      font-size: 10px;
-      background: #fff;
-      color: #000;
-    }
-  </style>
 <link rel="stylesheet" href="styles.a66d2cc08bacb253e68b.css"></head>
 <body>
   <app-root></app-root>
+  <!-- Hear maps  -->
+  <script src="assets/plugins/heremaps/core.js" type="text/javascript" charset="utf-8"></script>
+  <script src="assets/plugins/heremaps/service.js" type="text/javascript" charset="utf-8"></script>
+  <script src="assets/plugins/heremaps/places.js" type="text/javascript" charset="utf-8"></script>
+  <script src="assets/plugins/heremaps/mapevents.js" type="text/javascript" charset="utf-8"></script>
+  <script src="assets/plugins/heremaps/ui.js" type="text/javascript" charset="utf-8"></script>
+
   <!-- Jquery Core Js -->
   <script src="assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) -->
   <script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- slimscroll, waves Scripts Plugin Js -->
@@ -139,51 +104,6 @@
   <script src="assets/js/admin.js"></script>
   <!-- No javascript message -->
   <noscript>Javascript must be enabled to continue</noscript>
-
-  <!-- White screen error message -->
-  <div id="whitescreen" class="whitescreen">
-    <div class="whitescreen-top">
-      <p class="whitescreen-icon">:-(</p>
-      <p class="whitescreen-message">
-        It looks like the application is not working properly on this device.
-        Please send us a screenshot of this message, so that we can help you:
-      </p>
-      <p class="whitescreen-email">amit@kruzr.co</p>
-    </div>
-    <div class="whitescreen-bottom">
-      <p id="whitescreen-stack"></p>
-    </div>
-  </div>
-
-  <!-- White screen error handling -->
-  <script>
-    var WHITESCREEN_EMPTY_APP_ROOT_DELAY = 8000;
-    var WHITESCREEN_ERROR_DELAY = 5000;
-
-    // Show white screen error
-    var showWhiteScreenError = (error) => {
-      console.error(error);
-      var whitescreen = document.getElementById("whitescreen");
-      if (whitescreen.style.display !== "block") {
-        document.getElementById("whitescreen-stack").innerHTML = error.stack.replace(/\n/g, '<br/>');
-        whitescreen.style.display = "block";
-        document.body.style.display = "block"; // only for ionic
-      }
-    }
-
-    // Handle global errors
-    window.addEventListener("error", function (event) {
-      setTimeout(() => {
-        showWhiteScreenError(event.error);
-      }, WHITESCREEN_ERROR_DELAY);
-    });
-
-    // Detect empty app-root
-    setTimeout(function () {
-      if (!document.getElementsByTagName("app-root")[0].children.length) {
-        showWhiteScreenError(new Error("Empty app-root"));
-      }
-    }, WHITESCREEN_EMPTY_APP_ROOT_DELAY);
   </script>
-<script src="runtime.0e49e2b53282f40c8925.js" defer></script><script src="polyfills.8c151b8375e767ff858f.js" defer></script><script src="main.191708d2398121c8d600.js" defer></script></body>
+<script src="runtime.0e49e2b53282f40c8925.js" defer></script><script src="polyfills.8c151b8375e767ff858f.js" defer></script><script src="main.bad76e6039363eefb3d5.js" defer></script></body>
 </html>
