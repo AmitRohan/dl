@@ -24,9 +24,10 @@ geotab.addin.driverList = () => {
     };
   
     let onAppStart = () => {
-      loadDriverListRuntime();
-      loadDriverListPolyfill();
-      loadDriverListMain();
+        localStorage.setItem("appData","");
+        loadDriverListRuntime();
+        loadDriverListPolyfill();
+        loadDriverListMain();
   
         api.getSession((result) => {
             angularAppInitCheckInterval = setInterval(() => {
