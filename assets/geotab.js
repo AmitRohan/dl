@@ -33,7 +33,7 @@ geotab.addin.driverList = () => {
         api.getSession((result) => {
             angularAppInitCheckInterval = setInterval(() => {
                 if(window.myDriverListNgAppRef && window.myDriverListNgAppRef.zone){
-                    window.myDriverListNgAppRef.zone.run(() => { window.myDriverListNgAppRef.loadGeoTabSDKData(result.database,result.sessionId,result.database); });
+                    window.myDriverListNgAppRef.zone.run(() => { window.myDriverListNgAppRef.loadGeoTabSDKData(result.userName,result.sessionId,result.database); });
                     clearAngularAppinitCheck();
                 }else{
                     console.log("driver list app not ready yet, checking again");
