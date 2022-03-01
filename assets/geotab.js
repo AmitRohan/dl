@@ -24,7 +24,6 @@ geotab.addin.driverList = () => {
     };
   
     let onAppStart = () => {
-        localStorage.setItem("driverData","");
         localStorage.setItem("tripData","");
         loadDriverListRuntime();
         loadDriverListPolyfill();
@@ -32,11 +31,11 @@ geotab.addin.driverList = () => {
   
         api.getSession((result) => {
             angularAppInitCheckInterval = setInterval(() => {
-                if(window.myDriverListNgAppRef && window.myDriverListNgAppRef.zone){
-                    window.myDriverListNgAppRef.zone.run(() => { window.myDriverListNgAppRef.loadGeoTabSDKData(result.userName,result.sessionId,result.database); });
+                if(window.myNgAppRef){
+                    window.myNgAppRef.loadGeoTabSDKData(result.userName,result.sessionId,result.database);
                     clearAngularAppinitCheck();
                 }else{
-                    console.log("driver list app not ready yet, checking again");
+                    console.log("driver app not ready yet, checking again");
                 }
             },500)
         });
