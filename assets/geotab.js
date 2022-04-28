@@ -30,9 +30,10 @@ geotab.addin.driverList = () => {
         loadDriverListMain();
   
         api.getSession((result) => {
+            var groupIds = state.getGroupFilter().map(_ => _.id);
             angularAppInitCheckInterval = setInterval(() => {
-                if(window.myNgAppRef){
-                    window.myNgAppRef.loadGeoTabSDKData(result.userName,result.sessionId,result.database);
+                if(window.myNgAppRef && window.myNgAppRef){
+                    window.myNgAppRef.loadGeoTabSDKData(result.userName,result.sessionId,result.database,groupIds);
                     clearAngularAppinitCheck();
                 }else{
                     console.log("driver app not ready yet, checking again");
