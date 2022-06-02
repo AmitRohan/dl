@@ -25,6 +25,11 @@ geotab.addin.driverList = () => {
   
     let onAppStart = () => {
         localStorage.setItem("tripData","");
+        if(localStorage.getItem("fromTrips") != "yes"){
+            localStorage.setItem("driverData","");
+        }else{
+            localStorage.setItem("fromTrips","no");   
+        }
         loadDriverListRuntime();
         loadDriverListPolyfill();
         loadDriverListMain();
